@@ -35,9 +35,9 @@ tree --charset ascii
 mkdir build
 cd build
 cmake ..
-# cmake .. -G"CodeBlocks - Unix Makefiles"
-# Открыть проект в CodeBlocks при открытии build/Project.cbn
-# Открыть проект в VisualStudio при открытии build/Project.sln
+# cmake .. -G "CodeBlocks - Unix Makefiles"
+# Открыть проект в CodeBlocks -> открыть build/Project.cbn
+# Открыть проект в VisualStudio -> открыть build/Project.sln
 cmake --build .
 ./main
 # Debug/main.exe
