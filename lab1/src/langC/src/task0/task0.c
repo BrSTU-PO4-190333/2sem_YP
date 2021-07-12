@@ -13,7 +13,8 @@ void task0(struct params_for_f data, double x_left, double x_right, double step)
         "f2"
     );
 
-    for (double x = x_left, i = 1; x < x_right; x += step, i++)
+    int i = 1;
+    for (double x = x_left; x < x_right; x += step)
     {
         printf(
             "%12d\t%12.3f\t%12.3f\t%12.3f\t%12.3f\n",
@@ -25,5 +26,6 @@ void task0(struct params_for_f data, double x_left, double x_right, double step)
         );
         x1 += step;
         x2 += step;
+        i += 1;
     }
 }

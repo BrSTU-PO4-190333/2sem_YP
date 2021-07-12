@@ -20,6 +20,6 @@ void task1(struct params_for_f data, double x_left, double x_right, double step)
         }
     }
 
-    printf("\nМаксимальное значение\n");
+    printf("\nMax value\n");
     printf("f(%lf) = %lf\n", maxf.arg, maxf.value);
 }

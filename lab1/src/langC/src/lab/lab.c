@@ -3,11 +3,11 @@
 void lab()
 {
     char name[20];
-    printf("Ваше имя: ");
+    printf("Your name (Pavel): ");
     scanf("%s", name);
 
     char surname[20];
-    printf("Ваша фамилия: ");
+    printf("Your surname (Galanin): ");
     scanf("%s", surname);
 
     struct params_for_f data; //для передачи параметров в функцию
@@ -36,15 +36,15 @@ void lab()
     data.h2 = (data.g2 + data.a) * data.d;
 
     double x_left;
-    printf("Левая граница: ");
+    printf("Left border (-3.9): ");
     scanf("%lf", &x_left);
 
     double x_right;
-    printf("Правая граница: ");
+    printf("Right border (-3.7): ");
     scanf("%lf", &x_right);
 
     double step;
-    printf("Шаг: ");
+    printf("Step (0.01): ");
     scanf("%lf", &step);
 
     task0(data, x_left, x_right, step);
