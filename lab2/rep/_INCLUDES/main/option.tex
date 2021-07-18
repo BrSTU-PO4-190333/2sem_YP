@@ -1,0 +1,109 @@
+\paragraph{Условие:} \hspace{0pt}
+
+Ознакомиться с понятием градиента и методом градиентного спуска (Вспомнить дифференцирование функций)
+
+Написать программу поиска максимумов и минимумов функции $F(x,y,z)$ методом градиентного поиска (с постоянным шагом).
+
+Входные данные в программу: Пользователь 
+\begin{itemize}
+    \item вводит диапазон поиска
+    \item вводит стартовую точку поиска (можно генерировать случайно в указанном диапазоне)
+    \item выбирает направление поиска ($min, max$).
+\end{itemize}
+
+Выходные данные: Найденный экстремум - точка и соответствующее значение функции.
+
+Вид функции и вариант:
+
+$$F(x,y,z) = f_1*f_2 + f_3*f_4$$
+
+\begin{center}
+    \begin{tabular}{ | l | l | l | l | l | }
+        \hline
+        Вариант & $f_1$ & $f_2$ & $f_3$ & $f_4$ \\
+        \hline
+        $5$ & $x \cdot y$ & $z^2$ & $2 \cdot x^2 + 3$ & $y^2$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+\paragraph{Реализация:} \hspace{0pt}
+
+
+\lstinputlisting[language=C++, name=main.h,]
+{../../src/langC/src/main.h}
+
+\lstinputlisting[language=C++, name=main.c,]
+{../../src/langC/src/main.c}
+
+
+\lstinputlisting[language=C++, name=lab.h,]
+{../../src/langC/src/lab/lab.h}
+
+\lstinputlisting[language=C++, name=lab.c,]
+{../../src/langC/src/lab/lab.c}
+
+
+\lstinputlisting[language=C++, name=gradXYZ.h,]
+{../../src/langC/src/gradXYZ/gradXYZ.h}
+
+\lstinputlisting[language=C++, name=gradXYZ.c,]
+{../../src/langC/src/gradXYZ/gradXYZ.c}
+
+
+\lstinputlisting[language=C++, name=option_5.h,]
+{../../src/langC/src/option_5/option_5.h}
+
+\lstinputlisting[language=C++, name=option_5.c,]
+{../../src/langC/src/option_5/option_5.c}
+
+
+\paragraph{Результат программы (поиск min'имума):} \hspace{0pt}
+
+\begin{lstlisting}[language=Out,]
+Шаг (0.001): 0.001
+Приближение (0.001): 0.001 
+Искать min - 1, max - 2 (1): 1
+Левая граница X (-5): -5
+Правая граница X (5): 5
+Начальная точка X (1): 1
+Левая граница Y (-5): -5
+Правая граница Y (5): 5
+Начальная точка Y (1): 1
+Левая граница Z (-5): -5
+Правая граница Z (5): 5
+Начальная точка Z (1): 1
+
+Min-ум функции:
+f(
+    x = 2.493378
+    y = -1.521199
+    z = 5.023123
+) = -59.987482
+\end{lstlisting}
+
+
+\paragraph{Результат программы (поиск max'имума):} \hspace{0pt}
+
+\begin{lstlisting}[language=Out,]
+Шаг (0.001): 0.001
+Приближение (0.001): 0.001
+Искать min - 1, max - 2 (1): 2
+Левая граница X (-5): -5
+Правая граница X (5): 5
+Начальная точка X (1): 1
+Левая граница Y (-5): -5
+Правая граница Y (5): 5
+Начальная точка Y (1): 1
+Левая граница Z (-5): -5
+Правая граница Z (5): 5
+Начальная точка Z (1): 1
+
+Max-ум функции:
+f(
+    x = 4.471862
+    y = 5.133971
+    z = 1.874665
+) = 1213.934496    
+\end{lstlisting}
