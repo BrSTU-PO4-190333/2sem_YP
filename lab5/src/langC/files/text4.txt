@@ -1,0 +1,28 @@
+Classification and Prediction
+3.1 Defining Classification
+We begin the discussion of four major data mining techniques with
+classification. Classification is a supervised two-step process. During
+the first step, a segment of the dataset, the training set, is used to extract
+an accurate model that maps the data of the training set into user
+predefined classes (groups). During the second step, the model is used
+either to classify any new data tuple or dataset introduced, or to extract
+more accurate classification rules. Classification could be defined as:
+Classification is the process that finds the common properties among
+a set of objects in a dataset and classifies them into different classes,
+according to a classification model [Chen et al., 1996]
+The core requirements for successful classification are a well-defined
+set of classes and a training set of pre-classified examples [Han and Kamber,
+2001].
+The most popular classification techniques are: a) Bayesian classification,
+b) decision trees, and c) neural networks. In the rest of this section
+we briefly describe the first two.
+3.2 Bayesian Classification
+As its name implies, Bayesian classification attempts to assign a sample
+x to one of the given classes ci, C2,.., CJV, using a probability model
+defined according to the Bayes theorem. The latter calculates the posterior
+probability of an event, conditional on some other event [Bretthorst,
+1994].
+Basic prerequisites for the application of bayesian classification are
+[Weiss and Kulikowski, 1991]:
+1. Knowledge of the prior probability for each class q.
+2. Knowledge of the conditional probability density function.

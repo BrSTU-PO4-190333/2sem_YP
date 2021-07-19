@@ -1,0 +1,116 @@
+\paragraph{Условие:} \hspace{0pt}
+
+\begin{enumerate}
+    \item Вспомнить: указатели, ссылки; структуры данных (записи); динамические структуры: стек, дек; чтение данных из файла; функции: malloc, sizeof, free; new, delete.
+    \item Разобраться с алгоритмом кодирования Шеннона-Фано и Хаффмана.
+    \item Разобраться с принципами построения деревьев. Разработать подход построения бинарного дерева, который реализует соответствующий (вашему варианту) алгоритм кодирования.
+    \item Написать программу:
+    \begin{enumerate}
+        \item Считать текст из файла. Это исходный текст, на основании которого будет происходить кодирование.
+        \item Составить статистику по символам, встречающимся в тексте, в отсортированном виде: <Символ> <Частота> ... ...
+        \item Реализовать необходимые типы/структуры для организации дерева. Разработать функции для работы с деревьями. Протестировать их работу, прежде чем приступать к реализации алгоритма кодирования.
+        \item Реализовать алгоритм построения дерева.
+        \item Отобразить (сохранить в файл) таблицу кодов для символов исходного текста.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+
+\paragraph{Реализация:} \hspace{0pt}
+
+\lstinputlisting[language=C++, name=main.c,]
+{../../src/langC/src/main.c}
+
+\newpage
+
+
+\paragraph{Результат программы:} \hspace{0pt}
+
+\begin{lstlisting}[language=Out,]
+= = = File = = =
+Data Reduction
+Data reduction techniques are used in order to obtain a new representation
+of the data set that is much smaller in volume, but yet produces
+the same (or almost the same) analytical results. The most common
+reduction strategies are a) data cube aggregation, b) dimensionality reduction,
+c) numerocity reduction, and d) discretization and concept hierarchy
+generation [Barbara et al., 1997].
+2.6 Data Discretization
+As already mentioned, data discretization is a strategy for data reduction,
+but with particular importance. Discretization methods are applied
+both on numeric and categorical data. Specific methods include:
+- Discretization methods for numeric data [Kerber, 1992]
+- Binning
+- Histogram Analysis
+- Cluster Analysis
+- Entropy-Based Discretization
+- Segmentation by natural partitioning
+- Discretization methods for categorical data [Han and Fu, 1994]
+- Specification of a partial ordering of attributes explicitly at the
+schema level by users or experts
+Data Mining and Knowledge Discovery: A brief overview 21
+- Specification of a portion of a hierarchy by explicit data grouping
+- Specification of a set of attributes, but not of their partial ordering
+�
+= = = End file = = =
+
+= = = Array = = =
+| array[i] | counter  | symbal   | code             |
+| -------- | -------- | -------- | ---------------- |
+| 0        | 155      |          | __000            |
+| 1        | 100      | t        | __001            |
+| 2        | 98       | a        | __0100           |
+| 3        | 94       | e        | __0101           |
+| 4        | 92       | i        | __0110           |
+| 5        | 69       | r        | __0111           |
+| 6        | 67       | o        | __1000           |
+| 7        | 64       | n        | __1001           |
+| 8        | 46       | c        | __10100          |
+| 9        | 45       | s        | __10101          |
+| 10       | 38       | d        | __10110          |
+| 11       | 28       | u        | __10111          |
+| 12       | 27       | l        | __11000          |
+| 13       | 23       | \n       | __110010         |
+        | __110011         |
+| 15       | 22       | m        | __110100         |
+| 16       | 20       | h        | __110101         |
+| 17       | 20       | p        | __110110         |
+| 18       | 18       | g        | __110111         |
+| 19       | 16       | y        | __111000         |
+| 20       | 16       | f        | __111001         |
+| 21       | 15       | b        | __1110100        |
+| 22       | 11       | -        | __1110101        |
+| 23       | 10       | ,        | __1110110        |
+| 24       | 10       | D        | __1110111        |
+| 25       | 7        | z        | __1111000        |
+| 26       | 6        | .        | __11110010       |
+| 27       | 6        | 9        | __11110011       |
+| 28       | 5        | S        | __11110100       |
+| 29       | 5        | )        | __11110101       |
+| 30       | 5        | v        | __11110110       |
+| 31       | 4        | w        | __11110111       |
+| 32       | 4        | 1        | __11111000       |
+| 33       | 4        | A        | __111110010      |
+| 34       | 3        | [        | __111110011      |
+| 35       | 3        | ]        | __11111010       |
+| 36       | 3        | x        | __111110110      |
+| 37       | 3        | 2        | __111110111      |
+| 38       | 3        | B        | __111111000      |
+| 39       | 2        | H        | __111111001      |
+| 40       | 2        | :        | __111111010      |
+| 41       | 2        | K        | __1111110110     |
+| 42       | 1        | 6        | __1111110111     |
+| 43       | 1        | M        | __1111111000     |
+| 44       | 1        | T        | __1111111001     |
+| 45       | 1        | �        | __1111111010     |
+| 46       | 1        | 7        | __11111110110    |
+| 47       | 1        | (        | __11111110111    |
+| 48       | 1        | q        | __1111111100     |
+| 49       | 1        | R        | __11111111010    |
+| 50       | 1        | 4        | __11111111011    |
+| 51       | 1        | F        | __1111111110     |
+| 52       | 1        | E        | __11111111110    |
+| 53       | 1        | C        | __111111111110   |
+= = = End array = = =
+\end{lstlisting}
