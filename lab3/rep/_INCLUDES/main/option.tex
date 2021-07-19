@@ -1,0 +1,87 @@
+\paragraph{Условие:} \hspace{0pt}
+
+Найти минимум функции: где
+
+\begin{itemize}
+    \item $a$ - кол-во букв в фамилии
+    \item $b$ - введённое пользователем значение в диапазоне $[2, 10]$
+\end{itemize}
+
+Организовать ввод пользователя:
+
+\begin{itemize}
+    \item cтартовая точка $x_0$
+    \item параметр $b$ (Проверить правильность ввода параметров)
+\end{itemize}
+Реализовать метод случайного поиска. Программа должна выводить промежуточную информацию, когда происходит "улучшение" функции, в виде:
+
+\begin{lstlisting}[language=empty,]
+<#>             <y>             <x>
+(итерация)      (функционал)    (аргумент)
+\end{lstlisting}
+
+
+\paragraph{Реализация:} \hspace{0pt}
+
+
+\lstinputlisting[language=C++, name=main.h,]
+{../../src/langC/src/main.h}
+
+\lstinputlisting[language=C++, name=main.c,]
+{../../src/langC/src/main.c}
+
+
+\lstinputlisting[language=C++, name=lab.h,]
+{../../src/langC/src/lab/lab.h}
+
+\lstinputlisting[language=C++, name=lab.c,]
+{../../src/langC/src/lab/lab.c}
+
+
+\newpage
+
+
+\lstinputlisting[language=C++, name=get_table_with_extremum.h,]
+{../../src/langC/src/get_table_with_extremum/get_table_with_extremum.h}
+
+\lstinputlisting[language=C++, name=get_table_with_extremum.c,]
+{../../src/langC/src/get_table_with_extremum/get_table_with_extremum.c}
+
+
+\newpage
+
+
+\lstinputlisting[language=C++, name=y.h,]
+{../../src/langC/src/y/y.h}
+
+\lstinputlisting[language=C++, name=y.c,]
+{../../src/langC/src/y/y.c}
+
+
+\paragraph{Результат программы:} \hspace{0pt}
+
+\begin{lstlisting}[language=Out,]
+Ваша фамилия (Галанин): Галанин
+b c[2, 10] (8): 8
+Стартовая точка (5): 5
+Шаг (0.001): 0.001
+Число итераций (100): 100
+Максимальное число неудач (3): 3
+| Iterations |                x |                y |  min/max |
+| ---------- | ---------------- | ---------------- | -------- |
+|          1 |       5.00100000 |       0.23564983 |      min |
+|          2 |       5.00200000 |       0.23599610 |      max |
+|          3 |       5.00300000 |       0.22954606 |      min |
+|          4 |       5.00400000 |       0.22955358 |      max |
+|          5 |       5.00500000 |       0.22656794 |        - |
+|          6 |       5.00600000 |       0.22499606 |      min |
+|          7 |       5.00700000 |       0.22614406 |      max |
+|          8 |       5.00800000 |       0.22302137 |      min |
+|          9 |       5.00900000 |       0.22701535 |      max |
+|         10 |       5.01000000 |       0.22400602 |      min |
+|         11 |       5.01100000 |       0.22864089 |      max |
+|         12 |       5.01200000 |       0.22807070 |      min |
+|         13 |       5.01300000 |       0.23130136 |        - |
+|         14 |       5.01400000 |       0.23433785 |        - |
+|         15 |       5.01500000 |       0.23506129 |        - |    
+\end{lstlisting}
