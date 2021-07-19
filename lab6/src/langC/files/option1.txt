@@ -1,0 +1,15 @@
+a = 5.678;
+b = 466;
+
+sum = a + b;
+difference = a - b;
+
+multiplication = a * b;
+division = a / b;
+
+complexExpresion = a / ((b + a) * b);
+
+u = 111;
+k = 444.555;
+
+sumAaBb = u + k;
