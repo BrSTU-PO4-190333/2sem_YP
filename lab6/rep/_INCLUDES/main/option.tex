@@ -1,0 +1,162 @@
+\paragraph{Условие:} \hspace{0pt}
+
+Написать программу реализующую лексический анализатор по варианту. После обработки вывести таблицу лексем.
+
+\begin{tabular}{ | l | l | }
+    \hline
+    \textbf{Лексема} & \textbf{Тип лексемы}         \\ \hline
+    begin            & Ключевое слово               \\ \hline
+    for              & Ключевое слово               \\ \hline
+    i                & Идентификатор                \\ \hline
+    :=               & Знак присваения              \\ \hline
+    1                & Целочисленная константа      \\ \hline
+    to               & Ключевое слово               \\ \hline
+    N                & Идентификатор                \\ \hline
+    do               & Ключевое слово               \\ \hline
+    fg               & Идентификатор                \\ \hline
+    :=               & Знак присваения              \\ \hline
+    fg               & Идентификатор                \\ \hline
+    *                & Знак арифметической операции \\ \hline
+    0.5              & Вещественная константа       \\ \hline
+\end{tabular}
+
+Текст на входном языке задается в виде текста введённого пользователем, либо символьного (текстового) файла.
+
+Программа должна выдавать сообщения о наличие во входном тексте ошибок, которые могут быть обнаружены на этапе лексического анализа.
+
+Длину идентификаторов и строковых констант считать ограниченной 32 символами.
+Программа должна допускать наличие комментариев.
+
+Создать хеш-таблицу идентификаторов.
+Выполнить поиск введённого идентификатора в таблице, вывести номер яцейки в таблице и количество вычислений хеш-функций и операций сравнений.
+
+\newpage
+
+\textbf{Вариант 1}
+
+Входной язык содержит арифметические выражения, разделённые символом \textbf{;} (точка с запятой).
+Арифметические выражения состоят из идентификаторов, десятичных чисел с плавающей точкой, знаков операций и скобок.
+Создать хеш-таблицу всех найденных идентификаторов.
+
+
+\paragraph{Реализация:} \hspace{0pt}
+
+
+\lstinputlisting[language=C++, name=main.h,]
+{../../src/langC/src/main.h}
+
+\lstinputlisting[language=C++, name=main.c,]
+{../../src/langC/src/main.c}
+
+
+\lstinputlisting[language=C++, name=analyzer.h,]
+{../../src/langC/src/analyzer/analyzer.h}
+
+\lstinputlisting[language=C++, name=analyzer.c,]
+{../../src/langC/src/analyzer/analyzer.c}
+
+
+\lstinputlisting[language=C++, name=hashtable.h,]
+{../../src/langC/src/hashtable/hashtable.h}
+
+\lstinputlisting[language=C++, name=hashtable.c,]
+{../../src/langC/src/hashtable/hashtable.c}
+
+
+\lstinputlisting[language=C++, name=list.h,]
+{../../src/langC/src/list/list.h}
+
+\lstinputlisting[language=C++, name=list.c,]
+{../../src/langC/src/list/list.c}
+
+
+\paragraph{Результат программы:} \hspace{0pt}
+
+\begin{lstlisting}[language=Out,]
+= = = File = = =
+a = 5.678;
+b = 466;
+
+sum = a + b;
+difference = a - b;
+
+multiplication = a * b;
+division = a / b;
+
+complexExpresion = a / ((b + a) * b);
+
+u = 111;
+k = 444.555;
+
+sumAaBb = u + k;
+�
+= = = End file = = =
+
+= = = Hashtable = = =
+| arr[i] | List
+| ------ | ----
+|      6 | multiplication -> NULL
+|     45 | division -> NULL
+|     61 | difference -> NULL
+|     75 | sum -> NULL
+|     97 | a -> NULL
+|     98 | b -> NULL
+|    107 | sumAaBb -> k -> NULL
+|    117 | complexExpresion -> u -> NULL
+= = = End hashtable = = =
+
+= = = List = = =
+| Lexeme           | Lexeme type      |
+| ---------------- | ---------------- |
+| k                | ID               |
+| +                | arifmetic symbol |
+| u                | ID               |
+| =                | equals           |
+| sumAaBb          | ID               |
+| 444.555          | real const       |
+| =                | equals           |
+| k                | ID               |
+| 111              | int const        |
+| =                | equals           |
+| u                | ID               |
+| b                | ID               |
+| *                | arifmetic symbol |
+| a                | ID               |
+| +                | arifmetic symbol |
+| b                | ID               |
+| /                | arifmetic symbol |
+| a                | ID               |
+| =                | equals           |
+| complexExpresion | ID               |
+| b                | ID               |
+| /                | arifmetic symbol |
+| a                | ID               |
+| =                | equals           |
+| division         | ID               |
+| b                | ID               |
+| *                | arifmetic symbol |
+| a                | ID               |
+| =                | equals           |
+| multiplication   | ID               |
+| b                | ID               |
+| -                | arifmetic symbol |
+| a                | ID               |
+| =                | equals           |
+| difference       | ID               |
+| b                | ID               |
+| +                | arifmetic symbol |
+| a                | ID               |
+| =                | equals           |
+| sum              | ID               |
+| 466              | int const        |
+| =                | equals           |
+| b                | ID               |
+| 5.678            | real const       |
+| =                | equals           |
+| a                | ID               |
+= = = End list = = =
+
+list cleared
+
+Hash table cleared
+\end{lstlisting}
