@@ -1,0 +1,35 @@
+2.3 Data Integration
+This step entails the integration of multiple databases, data cubes,
+or files into a unified schema. Data integration can be accomplished at
+three levels [Han and Kamber, 2001]:
+a. Integration of the data store schema
+The goal is the integration of metadata from different sources and the
+solution of the "entity identification problem", i.e., how to identify
+identical or equivalent entities from multiple data sources.
+b. Detection and resolution of data value conflicts
+The goal is to handle cases where attribute values for the same real
+world entity, provided by different sources, are not the same, due to
+different representations or different scales, e.g., metric vs. British
+units.
+c. Management of redundant data
+The goal here is to identify and eliminate multiple copies of the same
+item, since the same attribute is often named differently in different
+databases (e.g. A.custJd = B.custJd). Through correlation analysis,
+the handling of redundant data is feasible.
+2.4 Data Transformation
+Another important preprocessing task is data transformation. The
+most common transformation techniques are:
+- Smoothing, which removes noise from data.
+- Aggregation, which summarizes data and constructs data cubes.
+- Generalization, which is also known as concept hierarchy climbing.
+- Attribute/feature construction, which composes new attributes
+from the given ones.
+- Normalization, which scales the data within a small, specified range.
+The most dominant normalization techniques according to Weiss and
+Indurkhya are [Weiss and Indurkhya, 1998]:
+1) min-max normalization: Linear transformation is applied on the
+data. 
+2) z-score normalization: Attribute A is normalized with respect to
+its average value and standard deviation:
+3) decimal scaling normalization: The values of attribute A are normalized
+by shifting their decimal part.

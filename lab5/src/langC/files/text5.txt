@@ -1,0 +1,31 @@
+Decision Trees
+Decision trees (DT) are the most popular technique for prediction. In
+order to successfully apply a decision tree algorithm, a well-defined set of
+classes (categories) and a training set of pre-classified data are necessary.
+Decision tree quality is highly associated with the classification accuracy
+reached on the training dataset, as well as with the size of the tree. DT
+algorithms are two-phase processes [Han and Kamber, 2001; Quinlan,
+1986]:
+1) Building phase: The training data set is recursively partitioned
+until all the instances in a partition belong to the same class
+2) Pruning phase: Nodes are pruned to prevent overfitting and to
+obtain a tree with higher accuracy
+The primary features of a decision tree are:
+- Root node: The dataset attribute that is selected as the base to
+built the tree upon
+- Internal node: An attribute that resides somewhere in the inner
+part of the tree
+- Branch descending of a node: One of the possible values for the
+attribute the branch initiates
+- Leaf: One of the predefined classes
+A DT example is illustrated in Figure 2.4. This particular tree attempts
+to predict whether a game of golf will be played, depending on
+weather conditions. The classes are two (YES: the game will be conducted
+and NO: the game will be postponed).
+During the building phase, part of the initial dataset is used and one
+of the dataset attributes is selected to classify the tuples upon. If some
+dataset attributes are misclassified, exception rules are introduced and
+the process is repeated until all the attributes are correctly classified.
+All DT algorithms apply a splitting criterion, which is a metric normally
+calculated for each attribute. The minimum (or maximum) value
+of this metric points to the attribute on which the dataset must be split.

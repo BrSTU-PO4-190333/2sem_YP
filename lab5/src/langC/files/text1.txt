@@ -1,0 +1,34 @@
+2. Data Preprocessing
+2.1 The Scope of Data Preprocessing
+In order to achieve the maximum benefit from the application of a
+DM algorithm on a dataset, preprocessing of the data is necessary, to
+ensure data integrity and validity. Basic preprocessing tasks include
+cleaning, transformation, integration, reduction, and discretization of
+the data [Kennedy et al., 1998; Pyle, 1999]. A brief overview of these
+tasks follows.
+2.2 Data Cleaning
+Real-world data are usually noisy and incomplete, and their cleaning
+includes all the processes of filling in missing values, smoothing out noise,
+and discovering outliers.
+Missing values may be due to: a) equipment malfunction (i.e., the
+database is down), b) inconsistencies between data within a dataset
+and, thus, deletion, or c) omission, in case data are not understood or
+considered trivial [Friedman, 1977].
+The most popular practices for handling missing values, are:
+1. Ignore the whole dataset tuple (applied when the class attribute is
+missing - supervised learning)
+2. Fill in the missing data manually (not applicable in the case of many
+tuples with missing values)
+3. Use a special character denoting a missing value, i.e., "?"
+4. Use the attribute mean to fill in the missing value
+5. Use the attribute mean of all tuples belonging to the same class to
+fill in the missing value (supervised learning)
+6. Use the most probable value to fill in the missing value
+The most common reasons that introduce noise to data are: a) problems
+during the phases of data collection, entry or transmission, b) faulty
+instruments and technology limitations and, c) inconsistency in attribute
+naming conventions and existence of duplicate records.
+Popular techniques for noise smoothing include binning, clustering,
+coordinated human-computer inspection, and regression. Most of these
+techniques include a data discretization phase, which is discussed later
+on in this Chapter.
